@@ -2,7 +2,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="min-h-screen flex flex-col items-center justify-center bg-[#2f3e46] text-white px-4 py-16"
+      className="min-h-screen flex flex-col items-center justify-center bg-[#172025] text-white px-4 py-16"
     >
       <h3 className="text-3xl md:text-4xl font-bold mb-8 text-center">
         About me
