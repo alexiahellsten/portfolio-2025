@@ -9,7 +9,7 @@ export default function Hero() {
       <span className="text-xl font-semibold">📌 Stockholm, SE </span>
       </div>
       <span className="mt-2">November 2025 - May 2026</span>
-      <a href="#projects" className="text-white px-6 py-3 rounded-full font-semibold bg-[#172025] hover:bg-[#2f3e46] transition mt-6">See my projects</a>
+      <a href="#projects" className="text-white px-6 py-3 rounded-full font-semibold bg-[#172025] hover:bg-[#2f3e46] transition mt-6">View my projects</a>
     </section>
   )
 }
