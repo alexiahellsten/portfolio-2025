@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital,wght@0,300..800;1,300..800&family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
 
 :root {
   font-family: "Karla", sans-serif;
@@ -15,6 +16,11 @@
 body {
   @apply bg-[#cad2c5] text-black;
 }
+
+.markdown {
+  font-family: "Google Sans Code", monospace; 
+}
+
 /* TODO: Eventuellt implementera darkmode */
 
 /* .dark body {
