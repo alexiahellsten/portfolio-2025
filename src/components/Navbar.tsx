@@ -8,7 +8,7 @@ export default function Navbar() {
 
   const menuItems = [
     { name: "About", href: "/about" },
-    { name: "Projects", href: "#projects" },
+    { name: "Projects", href: "/projects" },
     { name: "Contact", href: "#contact" },
   ]
 
