@@ -1,4 +1,4 @@
-export const translations = {
+export const translations: Record<string, any> = {
   en: {
       menu: {
       about: "About",
@@ -26,7 +26,7 @@ export const translations = {
       link: "Read more about LIA here",
     },
      lia: {
-      heading: "What is LIA?",
+      heading: "About LIA",
       sections: [
         {
           title: "LIA - What is it?",
@@ -46,6 +46,24 @@ export const translations = {
             "After 25 weeks, the internship ends with my supervisor writing a short evaluation and I write a final report about my experience.",
             "We celebrate the end of our collaboration and discuss future opportunities (hopefully a job offer is on the horizon!)",
           ],
+        },
+      ],
+    },
+    projects: {
+      heading: "My Projects",
+      subheading: "These are some projects I've been working on recently",
+      items: [
+        {
+          title: "Airbnb Clone",
+          desc: "A school project where we made a clone of Airbnb using Angular, Express and SQLite.",
+        },
+        {
+          title: "Freaky Fashion",
+          desc: "A full-stack e-commerce store built with React, Tailwind CSS, Express and SQLite.",
+        },
+        {
+          title: "Portfolio Website",
+          desc: "My personal portfolio built with React and Tailwind CSS.",
         },
       ],
     },
@@ -77,7 +95,7 @@ export const translations = {
       link: "Läs mer om LIA här",
     },
     lia: {
-      heading: "Vad är LIA?",
+      heading: "Om LIA",
       sections: [
         {
           title: "LIA - Vad är det?",
@@ -100,6 +118,24 @@ export const translations = {
         },
       ],
     },
+    projects: {
+      heading: "Mina Projekt",
+      subheading: "Här är några projekt jag har arbetat på nyligen",
+      items: [
+        {
+          title: "Airbnb-klon",
+          desc: "Ett skolprojekt där vi skapade en klon av Airbnb med Angular, Express och SQLite.",
+        },
+        {
+          title: "Freaky Fashion",
+          desc: "En fullstack e-handelsbutik byggd med React, Tailwind CSS, Express och SQLite.",
+        },
+        {
+          title: "Portfolio",
+          desc: "Min personliga portfolio skapad med React och Tailwind CSS.",
+        },
+      ],
+    },
   },
 }
-export default translations;
+export default translations
