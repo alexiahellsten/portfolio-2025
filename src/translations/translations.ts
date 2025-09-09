@@ -33,7 +33,7 @@ export const translations: Record<string, any> = {
           text: "LIA (Lärande i Arbete) is a practical training period for students. It lets us apply the theoretical knowledge we’ve learned by gaining real experience and building industry contacts.",
         },
         {
-          title: "What can we expect from you as a company?",
+          title: "What can we as a company expect from you?",
           text: "That I see the LIA internship as an opportunity to deepen my skills and grow, while also contributing with my knowledge and perspective to your organisation. I certainly don’t know everything when I begin my LIA, which is why I’ll need regular support and feedback from my supervisor (approx. 2 hours/week) during the internship.",
         },
         {
@@ -66,6 +66,14 @@ export const translations: Record<string, any> = {
           desc: "My personal portfolio website built with React, TypeScript and Tailwind CSS.",
         },
       ],
+    },
+    techgarden: {
+      heading: "🌼 My Ever-Growing Tech Garden",
+      subheading1: "Languages & Styling Frameworks:",
+      subheading2: "Front-End Libraries and Frameworks:",
+      subheading3: "Back-End & Databases:",
+      subheading4: "Dev Tools & Testing:",
+      subheading5: "Templating & Static Sites:",
     },
     footer: {
       contactHeading: "Let's get in touch!",
@@ -145,6 +153,14 @@ export const translations: Record<string, any> = {
       contactHeading: "Kontakta mig!",
       email: "alexia.hellsten@utb.ecutbildning.se",
       copyright: (year: number) => `Byggd med ❤️ av Alexia Hellsten © ${year}`,
+    },
+      techgarden: {
+      heading: "🌼 Min digitala trädgård",
+      subheading1: "Språk & Stilmallar:",
+      subheading2: "Front-End Bibliotek och Ramverk:",
+      subheading3: "Back-End & Databaser:",
+      subheading4: "Utvecklingsverktyg & Testning:",
+      subheading5: "Templating & Statiska Webbplatser:",
     },
   },
 }
