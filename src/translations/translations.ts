@@ -25,6 +25,30 @@ export const translations = {
       `,
       link: "Read more about LIA here",
     },
+     lia: {
+      heading: "What is LIA?",
+      sections: [
+        {
+          title: "LIA - What is it?",
+          text: "LIA (Lärande i Arbete) is a practical training period for students. It lets us apply the theoretical knowledge we’ve learned by gaining real experience and building industry contacts.",
+        },
+        {
+          title: "What can we expect from you as a company?",
+          text: "That I see the LIA internship as an opportunity to deepen my skills and grow, while also contributing with my knowledge and perspective to your organisation. I certainly don’t know everything when I begin my LIA, which is why I’ll need regular support and feedback from my supervisor (approx. 2 hours/week) during the internship.",
+        },
+        {
+          title: "About the LIA process",
+          steps: [
+            "I apply and we schedule a meeting to see if we're a good match.",
+            "We start planning potential projects and you assign me a supervisor/mentor.",
+            "I start the internship by working on real tasks and gaining hands-on experience while adding value to your team.",
+            "My mentor and I have regular check-ins about my work and how I'm making progress during the internship.",
+            "After 25 weeks, the internship ends with my supervisor writing a short evaluation and I write a final report about my experience.",
+            "We celebrate the end of our collaboration and discuss future opportunities (hopefully a job offer is on the horizon!)",
+          ],
+        },
+      ],
+    },
   },
   sv: {
       menu: {
@@ -51,6 +75,30 @@ export const translations = {
         Jag är väldigt ivrig att lära mig mer och få praktisk erfarenhet, vilket är varför jag nu söker en LIA-praktikplats i Stockholm från november 2025 till maj 2026.
       `,
       link: "Läs mer om LIA här",
+    },
+    lia: {
+      heading: "Vad är LIA?",
+      sections: [
+        {
+          title: "LIA - Vad är det?",
+          text: "LIA (Lärande i Arbete) är en praktisk utbildningsperiod för studenter som ger oss möjlighet att omsätta det teoretiska vi lärt oss under utbildningen i praktiken, genom att få verklig erfarenhet och bygga kontakter i branschen.",
+        },
+        {
+          title: "Vad kan vi som företag förvänta oss av dig?",
+          text: "Att jag ser LIA-praktiken som en chans för mig att lära mig mer och utvecklas, samtidigt som jag bidrar med mina kunskaper och perspektiv till er verksamhet. Jag kan långt ifrån allt när jag går ut på LIA och behöver få stöd och feedback från min handledare (ca 2 h/vecka) under praktikperioden.",
+        },
+        {
+          title: "LIA-processen",
+          steps: [
+            "Jag ansöker och vi bokar in ett möte för att se om vi är en bra match.",
+            "Vi börjar planera potentiella projekt och ni tilldelar mig en handledare/mentor.",
+            "Jag börjar praktiken och får praktisk erfarenhet, samtidigt som jag bidrar med värde till ert team.",
+            "Min handledare och jag har regelbundna avstämningar kring mitt arbete under praktikperioden.",
+            "Efter 25 veckor avslutas praktiken, ni skriver en kort utvärdering om mitt arbete och jag skriver en rapport om mina erfarenheter.",
+            "Vi firar avslutningen av vårt samarbete och diskuterar framtida möjligheter (förhoppningsvis med ett jobberbjudande!)",
+          ],
+        },
+      ],
     },
   },
 }
