@@ -3,6 +3,7 @@ export const translations: Record<string, any> = {
       menu: {
       about: "About",
       projects: "Projects",
+      lia: "LIA",
       contact: "Contact",
     },
       hero: {
@@ -85,6 +86,7 @@ export const translations: Record<string, any> = {
       menu: {
       about: "Om mig",
       projects: "Projekt",
+      lia: "LIA",
       contact: "Kontakt",
     },
       hero: {

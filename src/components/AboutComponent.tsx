@@ -23,7 +23,7 @@ function AboutComponent() {
       <p className="max-w-2xl mx-auto text-base md:text-lg text-left leading-relaxed whitespace-pre-line">
         {about.text}
       </p>
-      <Link to="/about#lia" className="text-red-300 mt-4">
+      <Link to="/lia" className="text-red-300 mt-14">
         {about.link}
       </Link>
     </section>

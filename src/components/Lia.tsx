@@ -13,7 +13,7 @@ function LiaComponent() {
   const lia = translations[language].lia
 
 return (
-    <section id="lia" className="flex flex-col items-center px-6 py-20">
+    <section id="lia" className="min-h-screen flex flex-col items-center px-6 py-60">
       <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
         {lia.heading}
       </h2>
