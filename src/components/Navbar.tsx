@@ -22,26 +22,27 @@ export default function Navbar() {
 
   return (
     <nav className="inset-x-0 top-0 z-50">
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 h-16">
+      <div className="mx-auto flex items-center justify-between px-6 h-16">
         <Link to="/">
           <h1 className="text-2xl font-bold">Alexia Hellsten</h1>
         </Link>
 
-      {/* Desktop */}
-    <ul className="hidden md:flex gap-6 list-none items-center">
-      {menuItems.map((item) => (
-        <li key={item.name}>
-          <a
-            href={item.href}
-            className="px-3 py-2 rounded-full text-md font-medium hover:bg-[#172025] hover:text-white transition"
-          >
-            {item.name}
-          </a>
-        </li>
-      ))}
+        {/* Desktop */}
+        <ul className="hidden md:flex gap-6 list-none items-center absolute left-1/2 transform -translate-x-1/2">
+          {menuItems.map((item) => (
+            <li key={item.name}>
+              <a
+                href={item.href}
+                className="px-3 py-2 rounded-full text-md font-medium hover:bg-[#172025] hover:text-white transition"
+              >
+                {item.name}
+              </a>
+            </li>
+          ))}
+        </ul>
 
-      {/* Toggle för språkvalet */}
-        <li>
+        {/* Toggle för språkvalet */}
+        <div className="hidden md:block">
           <button
             onClick={toggleLanguage}
             className="flex items-center gap-2 px-3 py-2 rounded-full text-md font-medium hover:bg-[#172025] hover:text-white transition"
@@ -49,9 +50,7 @@ export default function Navbar() {
             <Languages className="h-5 w-5" />
             {language === "en" ? "Svenska" : "English"}
           </button>
-        </li>
-      </ul>
-
+        </div>
 
         {/* Mobil */}
         <div className="flex items-center gap-2 md:hidden">
@@ -83,18 +82,18 @@ export default function Navbar() {
                 </a>
               </li>
             ))}
-           <li>
-          <button
-            onClick={() => {
-              toggleLanguage()
-              closeMenu()
-            }}
-            className="flex items-center gap-2 block px-3 py-2 rounded-md text-base font-medium hover:bg-[#172025] hover:text-white transition"
-          >
-            <Languages className="h-5 w-5" />
-            {language === "en" ? "Svenska" : "English"}
-          </button>
-        </li>
+            <li>
+              <button
+                onClick={() => {
+                  toggleLanguage()
+                  closeMenu()
+                }}
+                className="flex items-center gap-2 w-full px-3 py-2 rounded-md text-base font-medium hover:bg-[#172025] hover:text-white transition"
+              >
+                <Languages className="h-5 w-5" />
+                {language === "en" ? "Svenska" : "English"}
+              </button>
+            </li>
           </ul>
         </div>
       )}
