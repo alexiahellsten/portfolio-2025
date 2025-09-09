@@ -76,6 +76,11 @@ export const translations: Record<string, any> = {
       subheading4: "Dev Tools & Testing:",
       subheading5: "Templating & Static Sites:",
     },
+      contact: {
+      heading: "Contact me",
+      text1: "Do you have any questions or want to collaborate on a project?",
+      text2: "Feel free to reach out, I'll get back to you as soon as possible!",
+    },
     footer: {
       contactHeading: "Let's get in touch!",
       email: "alexia.hellsten@utb.ecutbildning.se",
@@ -150,6 +155,11 @@ export const translations: Record<string, any> = {
           desc: "Min personliga portfoliohemsida skapad med React, TypeScript och Tailwind CSS.",
         },
       ],
+    },
+    contact: {
+      heading: "Kontakta mig",
+      text1: "Har du några frågor eller vill samarbeta på ett projekt?",
+      text2: "Hör gärna av er så återkommer jag så snart jag kan!",
     },
     footer: {
       contactHeading: "Kontakta mig!",
