@@ -19,21 +19,21 @@ function ProjectsComponent() {
       img: "https://placehold.co/600x400.png",
       github: "https://github.com/alexiahellsten/airbnb-clone",
       demo: "#",
-      tech: ["Angular", "Express", "SQLite", "Node.js"],
+      tech: ["Angular", "TypeScript", "Express", "SQLite", "Node.js"],
     },
     {
       ...projects.items[1],
       img: "https://placehold.co/600x400.png",
       github: "https://github.com/alexiahellsten/freakyfashion-react",
       demo: "#",
-      tech: ["React", "Tailwind", "Express", "SQLite", "Vite", "Node.js"],
+      tech: ["React", "JavaScript", "Tailwind", "Express", "SQLite", "Vite", "Node.js"],
     },
     {
       ...projects.items[2],
       img: "https://placehold.co/600x400.png",
       github: "https://github.com/alexiahellsten/portfolio-2025",
       demo: "#",
-      tech: ["React", "Tailwind", "Vite"],
+      tech: ["React", "TypeScript","Tailwind", "Vite"],
     },
   ]
 
