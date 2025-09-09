@@ -1,4 +1,5 @@
 import { Mail } from "lucide-react"
+import { useLocation } from "react-router-dom"
 import { useContext } from "react"
 import { LanguageContext } from "../contexts/LanguageContext"
 import translations from "../translations/translations"
@@ -17,8 +18,14 @@ export default function Footer() {
   const footer = translations[language].footer
   const year = new Date().getFullYear()
 
+  //Hämtar den aktuella platsen
+  const location = useLocation()
+
+  //Kontrollerar om användaren är på /projects
+  const isOnProjectsPage = location.pathname === "/projects"
+
   return (
-    <footer className="bg-[#172025] text-white py-6 text-center bottom-0 w-full">
+    <footer className={`py-6 text-center bottom-0 w-full ${isOnProjectsPage ? "bg-red-200 text-black" : "bg-[#172025] text-white"}`}>
       <section className="flex flex-col md:flex-row justify-center md:justify-between mb-4 px-4">
         <div className="flex flex-col items-center md:items-start mb-4 md:mb-0">
             <a href={`mailto:${footer.email}`} className="flex items-center gap-x-2 mb-1">

@@ -1,5 +1,5 @@
 import { useState, useContext } from "react"
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 import { Menu, X, Languages } from "lucide-react"
 import { LanguageContext } from "../contexts/LanguageContext"
 import translations from "../translations/translations"
@@ -20,9 +20,19 @@ export default function Navbar() {
     { name: translations[language].menu.contact, href: "/contact" },
   ]
 
+  // Hämtar den aktuell platsen
+  const location = useLocation()
+
+  // Kontrollerar om användaren är på /home
+  const isOnHomePage = location.pathname === "/" || location.pathname === "/home"
+
   return (
     <nav className="inset-x-0 top-0 z-50">
-      <div className="mx-auto flex items-center justify-between px-6 h-16">
+      <div
+        className={`mx-auto flex items-center justify-between px-6 h-16 ${
+           isOnHomePage ? "bg-[#F0EFF4]" : "bg-[#172025] text-red-200"
+        }`}
+      >
         <Link to="/">
           <h1 className="text-2xl font-bold">Alexia Hellsten</h1>
         </Link>
@@ -33,7 +43,7 @@ export default function Navbar() {
             <li key={item.name}>
               <a
                 href={item.href}
-                className="px-3 py-2 rounded-full text-md font-medium hover:bg-[#172025] hover:text-white transition"
+                className={`px-3 py-2 rounded-full text-md font-medium transition ${isOnHomePage ? "hover:bg-[#172025] hover:text-white" : "text-red-200 hover:bg-[#FFF] hover:text-black"}`}
               >
                 {item.name}
               </a>
@@ -46,7 +56,7 @@ export default function Navbar() {
         <div className="hidden md:block">
           <button
             onClick={toggleLanguage}
-            className="flex items-center gap-2 px-3 py-2 rounded-full text-md font-medium hover:bg-[#172025] hover:text-white transition"
+            className={`flex items-center gap-2 px-3 py-2 rounded-full text-md font-medium transition ${isOnHomePage ? "hover:bg-[#172025] hover:text-white" : "text-red-200 hover:bg-[#FFF] hover:text-black"}`}
           >
             <Languages className="h-5 w-5" />
             {language === "en" ? "Svenska" : "English"}
@@ -57,7 +67,7 @@ export default function Navbar() {
         <div className="flex items-center gap-2 md:hidden">
           <button
             type="button"
-            className="inline-flex items-center justify-center h-10 w-10 rounded-full hover:bg-[#172025] hover:text-white transition"
+            className={`inline-flex items-center justify-center h-10 w-10 rounded-full transition ${isOnHomePage ? "hover:bg-[#172025] hover:text-white" : "text-red-200 hover:bg-[#FFF] hover:text-black"}`}
             aria-controls="mobile-menu"
             aria-expanded={menuOpen}
             aria-label="Toggle menu"
@@ -70,14 +80,16 @@ export default function Navbar() {
 
       {/* Toggle för mobil */}
       {menuOpen && (
-        <div id="mobile-menu" className="md:hidden">
+        <div id="mobile-menu"  className={`md:hidden ${
+          isOnHomePage ? "bg-[#F0EFF4]" : "bg-[#172025]"
+        }`}>
           <ul className="list-none px-6 py-3 space-y-1">
             {menuItems.map((item) => (
               <li key={item.name}>
                 <a
                   href={item.href}
                   onClick={closeMenu}
-                  className="block px-3 py-2 rounded-md text-base font-medium hover:bg-[#172025] hover:text-white transition"
+                  className={`block px-3 py-2 rounded-md text-base font-medium transition ${isOnHomePage ? "hover:bg-[#172025] hover:text-white" : "text-red-200 hover:bg-[#FFF] hover:text-black"}`}
                 >
                   {item.name}
                 </a>
@@ -89,7 +101,7 @@ export default function Navbar() {
                   toggleLanguage()
                   closeMenu()
                 }}
-                className="flex items-center gap-2 w-full px-3 py-2 rounded-md text-base font-medium hover:bg-[#172025] hover:text-white transition"
+                className={`flex items-center gap-2 w-full px-3 py-2 rounded-md text-base font-medium transition ${isOnHomePage ? "hover:bg-[#172025] hover:text-white" : "text-red-200 hover:bg-[#FFF] hover:text-black"}`}
               >
                 <Languages className="h-5 w-5" />
                 {language === "en" ? "Svenska" : "English"}
