@@ -14,7 +14,7 @@
 }
 
 body {
-  @apply bg-[#cad2c5] text-black;
+  @apply bg-[#F0EFF4] text-black;
 }
 
 .markdown {
@@ -26,3 +26,11 @@ body {
 /* .dark body {
   @apply bg-black text-white;
 } */
+
+/* Optional bg-colors to try out:
+bg-[#cad2c5] 
+bg-[#F0EFF4]
+bg-[#FFF7F8]
+bg-[#F7C1BB]
+bg-[#F1F7ED]
+*/
