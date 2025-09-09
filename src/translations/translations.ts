@@ -5,6 +5,13 @@ export const translations = {
       projects: "Projects",
       contact: "Contact",
     },
+      hero: {
+      title: "Hi! My name is Alexia",
+      subtitle: "I'm an aspiring full-stack developer looking for a LIA-internship in ",
+      location: "📌 Stockholm, SE",
+      period: "November 2025 - May 2026",
+      button: "View my projects",
+    },
     about: {
       title: "About me",
       text: `
@@ -24,6 +31,13 @@ export const translations = {
       about: "Om mig",
       projects: "Projekt",
       contact: "Kontakt",
+    },
+      hero: {
+      title: "Hej! Jag heter Alexia",
+      subtitle: "Jag är en blivande fullstack-utvecklare som söker LIA-praktik i ",
+      location: "📌 Stockholm, SE",
+      period: "November 2025 - Maj 2026",
+      button: "Se mina projekt",
     },
     about: {
       title: "Om mig",
