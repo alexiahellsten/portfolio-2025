@@ -42,6 +42,7 @@ export default function Navbar() {
         </ul>
 
         {/* Toggle för språkvalet */}
+        {/* TO DO: Lägg till någon rolig klick/hover-effekt, confetti eller regnbåge? */}
         <div className="hidden md:block">
           <button
             onClick={toggleLanguage}
