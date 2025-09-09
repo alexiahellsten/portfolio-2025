@@ -55,17 +55,22 @@ export const translations: Record<string, any> = {
       items: [
         {
           title: "Airbnb Clone",
-          desc: "A school project where we made a clone of Airbnb using Angular, Express and SQLite.",
+          desc: "A school project where we made a clone of Airbnb using Angular, TypeScript, Express and SQLite.",
         },
         {
           title: "Freaky Fashion",
-          desc: "A full-stack e-commerce store built with React, Tailwind CSS, Express and SQLite.",
+          desc: "A full-stack e-commerce store built with React, JavaScript, Tailwind CSS, Express and SQLite.",
         },
         {
           title: "Portfolio Website",
-          desc: "My personal portfolio built with React and Tailwind CSS.",
+          desc: "My personal portfolio website built with React, TypeScript and Tailwind CSS.",
         },
       ],
+    },
+    footer: {
+      contactHeading: "Let's get in touch!",
+      email: "alexia.hellsten@utb.ecutbildning.se",
+      copyright: (year: number) => `Built with ❤️ by Alexia Hellsten © ${year}`,
     },
   },
   sv: {
@@ -124,17 +129,22 @@ export const translations: Record<string, any> = {
       items: [
         {
           title: "Airbnb-klon",
-          desc: "Ett skolprojekt där vi skapade en klon av Airbnb med Angular, Express och SQLite.",
+          desc: "Ett skolprojekt där vi skapade en klon av Airbnb med Angular, TypeScript, Express och SQLite.",
         },
         {
           title: "Freaky Fashion",
-          desc: "En fullstack e-handelsbutik byggd med React, Tailwind CSS, Express och SQLite.",
+          desc: "En fullstack e-handelsbutik byggd med React, JavaScript, Tailwind CSS, Express och SQLite.",
         },
         {
           title: "Portfolio",
-          desc: "Min personliga portfolio skapad med React och Tailwind CSS.",
+          desc: "Min personliga portfoliohemsida skapad med React, TypeScript och Tailwind CSS.",
         },
       ],
+    },
+    footer: {
+      contactHeading: "Kontakta mig!",
+      email: "alexia.hellsten@utb.ecutbildning.se",
+      copyright: (year: number) => `Byggd med ❤️ av Alexia Hellsten © ${year}`,
     },
   },
 }
