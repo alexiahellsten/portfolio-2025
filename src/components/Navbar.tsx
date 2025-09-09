@@ -1,15 +1,23 @@
-import { useState, useEffect } from "react"
+import { useState, useContext } from "react"
 import { Link } from "react-router-dom"
-import { Menu, X } from "lucide-react"
+import { Menu, X, Languages } from "lucide-react"
+import { LanguageContext } from "../contexts/LanguageContext"
+import translations from "../translations/translations"
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
   const closeMenu = () => setMenuOpen(false)
 
+  // Hämtar språket från kontexten
+  const context = useContext(LanguageContext)
+  if (!context) throw new Error("LanguageContext not found")
+  const { language, toggleLanguage } = context
+
+  // Meny med översättningar
   const menuItems = [
-    { name: "About", href: "/about" },
-    { name: "Projects", href: "/projects" },
-    { name: "Contact", href: "#contact" },
+    { name: translations[language].menu.about, href: "/about" },
+    { name: translations[language].menu.projects, href: "/projects" },
+    { name: translations[language].menu.contact, href: "#contact" },
   ]
 
   return (
@@ -19,23 +27,34 @@ export default function Navbar() {
           <h1 className="text-2xl font-bold">Alexia Hellsten</h1>
         </Link>
 
-        {/* Desktop-meny */}
-        <ul className="hidden md:flex gap-6 list-none items-center">
-          {menuItems.map((item) => (
-            <li key={item.name}>
-              <a
-                href={item.href}
-                className="px-3 py-2 rounded-full text-md font-medium hover:bg-[#172025] hover:text-white transition"
-              >
-                {item.name}
-              </a>
-            </li>
-          ))}
-        </ul>
+      {/* Desktop */}
+    <ul className="hidden md:flex gap-6 list-none items-center">
+      {menuItems.map((item) => (
+        <li key={item.name}>
+          <a
+            href={item.href}
+            className="px-3 py-2 rounded-full text-md font-medium hover:bg-[#172025] hover:text-white transition"
+          >
+            {item.name}
+          </a>
+        </li>
+      ))}
+
+      {/* Toggle för språkvalet */}
+        <li>
+          <button
+            onClick={toggleLanguage}
+            className="flex items-center gap-2 px-3 py-2 rounded-full text-md font-medium hover:bg-[#172025] hover:text-white transition"
+          >
+            <Languages className="h-5 w-5" />
+            {language === "en" ? "Svenska" : "English"}
+          </button>
+        </li>
+      </ul>
+
 
         {/* Mobil */}
         <div className="flex items-center gap-2 md:hidden">
-          {/* Hamburgare */}
           <button
             type="button"
             className="inline-flex items-center justify-center h-10 w-10 rounded-full hover:bg-[#172025] hover:text-white transition"
@@ -49,7 +68,7 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobil */}
+      {/* Toggle för mobil */}
       {menuOpen && (
         <div id="mobile-menu" className="md:hidden">
           <ul className="list-none px-6 py-3 space-y-1">
@@ -64,6 +83,18 @@ export default function Navbar() {
                 </a>
               </li>
             ))}
+           <li>
+          <button
+            onClick={() => {
+              toggleLanguage()
+              closeMenu()
+            }}
+            className="flex items-center gap-2 block px-3 py-2 rounded-md text-base font-medium hover:bg-[#172025] hover:text-white transition"
+          >
+            <Languages className="h-5 w-5" />
+            {language === "en" ? "Svenska" : "English"}
+          </button>
+        </li>
           </ul>
         </div>
       )}
