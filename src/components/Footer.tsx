@@ -22,7 +22,7 @@ export default function Footer() {
   const location = useLocation()
 
   //Kontrollerar om användaren är på /projects
-  const lightMode = location.pathname === "/projects" || location.pathname === "/about"
+  const lightMode = location.pathname === "/projects" || location.pathname === "/about" || location.pathname === "/contact"
 
   return (
     <footer className={`py-6 text-center bottom-0 w-full ${lightMode ? "bg-red-200 text-black" : "bg-[#172025] text-white"}`}>
