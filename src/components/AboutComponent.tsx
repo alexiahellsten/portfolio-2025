@@ -9,19 +9,21 @@ function AboutComponent() {
   }
   const { language } = context;
 
+  const about = translations[language].about;
+
   return (
     <section
       id="about"
       className="min-h-screen flex flex-col items-center justify-center bg-[#172025] text-white px-4 py-16"
     >
       <h3 className="text-3xl md:text-4xl font-bold mb-8 text-center">
-        {translations[language].about.title}
+        {about.title}
       </h3>
       <p className="max-w-2xl mx-auto text-base md:text-lg text-left leading-relaxed whitespace-pre-line">
-        {translations[language].about.text}
+        {about.text}
       </p>
       <a href="#Lia" className="text-red-300 mt-4">
-        {translations[language].about.link}
+        {about.link}
       </a>
     </section>
   )
