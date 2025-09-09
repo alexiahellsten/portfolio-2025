@@ -1,6 +1,7 @@
 import { createContext, useState, useEffect } from "react"
 import type { ReactNode, ReactElement } from "react"
 
+
 // Definierar typen för context-värdet
 type LanguageContextType = {
   language: "en" | "sv"
@@ -15,13 +16,10 @@ type Props = { children: ReactNode }
 
 // Funktion som hanterar språkval och tillhandahåller context-värdet
 export default function LanguageProvider({ children }: Props): ReactElement {
-  const [language, setLanguage] = useState<"en" | "sv">("en")
-
-  // Laddar sparat språk från localStorage vid första renderingen
-  useEffect(() => {
+  const [language, setLanguage] = useState<"en" | "sv">(() => {
     const saved = localStorage.getItem("language") as "en" | "sv" | null
-    if (saved) setLanguage(saved)
-  }, [])
+    return saved ?? "en"
+  })
 
   // Sparar språkvalet i localStorage när det ändras
   useEffect(() => {
