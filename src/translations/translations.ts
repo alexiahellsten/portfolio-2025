@@ -56,8 +56,8 @@ export const translations: Record<string, any> = {
       subheading: "These are some projects I've been working on recently",
       items: [
         {
-          title: "Airbnb Clone",
-          desc: "A school project where we made a clone of Airbnb using Angular, TypeScript, Express and SQLite.",
+          title: "Portfolio Website",
+          desc: "My personal portfolio website built with React, TypeScript and Tailwind CSS.",
           videodemo: "Video demo available on the GitHub page",
         },
         {
@@ -66,8 +66,8 @@ export const translations: Record<string, any> = {
           videodemo: "Video demo available on the GitHub page",
         },
         {
-          title: "Portfolio Website",
-          desc: "My personal portfolio website built with React, TypeScript and Tailwind CSS.",
+          title: "Airbnb Clone",
+          desc: "A school project where we made a clone of Airbnb using Angular, TypeScript, Express and SQLite.",
           videodemo: "Video demo available on the GitHub page",
         },
       ],
@@ -149,8 +149,8 @@ export const translations: Record<string, any> = {
       subheading: "Här är några projekt jag har arbetat på nyligen",
       items: [
         {
-          title: "Airbnb-klon",
-          desc: "Ett skolprojekt där vi skapade en klon av Airbnb med Angular, TypeScript, Express och SQLite.",
+          title: "Portfolio",
+          desc: "Min personliga portfoliohemsida skapad med React, TypeScript och Tailwind CSS.",
           videodemo: "Video demo finns på GitHub-sidan",
         },
         {
@@ -159,8 +159,8 @@ export const translations: Record<string, any> = {
           videodemo: "Video demo finns på GitHub-sidan",
         },
         {
-          title: "Portfolio",
-          desc: "Min personliga portfoliohemsida skapad med React, TypeScript och Tailwind CSS.",
+          title: "Airbnb-klon",
+          desc: "Ett skolprojekt där vi skapade en klon av Airbnb med Angular, TypeScript, Express och SQLite.",
           videodemo: "Video demo finns på GitHub-sidan",
         },
       ],

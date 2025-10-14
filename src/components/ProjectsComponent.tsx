@@ -13,15 +13,10 @@ function ProjectsComponent() {
   const projectItems = [
     {
       ...projects.items[0],
-      img: "images/airbnb-clone.png",
-      github: "https://github.com/alexiahellsten/airbnb-clone",
-      demo: "#",
-      videos: [
-        "https://github.com/user-attachments/assets/063ab090-65fe-4fdd-a776-d61a809dcae8",
-        "https://github.com/user-attachments/assets/943537a4-9b43-4cba-8b39-59ecb505dd7e",
-        "https://github.com/user-attachments/assets/5ff6e9df-9ffa-4adf-b9e6-620203fc72eb",
-      ],
-      tech: ["Angular", "TypeScript", "Express", "SQLite", "Node.js"],
+      img: "images/portfolio.png",
+      github: "https://github.com/alexiahellsten/portfolio-2025",
+      demo: "https://alexiahellsten.vercel.app",
+      tech: ["React", "TypeScript", "Tailwind", "Vite"],
     },
     {
       ...projects.items[1],
@@ -40,10 +35,15 @@ function ProjectsComponent() {
     },
     {
       ...projects.items[2],
-      img: "images/portfolio.png",
-      github: "https://github.com/alexiahellsten/portfolio-2025",
+      img: "images/airbnb-clone.png",
+      github: "https://github.com/alexiahellsten/airbnb-clone",
       demo: "#",
-      tech: ["React", "TypeScript", "Tailwind", "Vite"],
+      videos: [
+        "https://github.com/user-attachments/assets/063ab090-65fe-4fdd-a776-d61a809dcae8",
+        "https://github.com/user-attachments/assets/943537a4-9b43-4cba-8b39-59ecb505dd7e",
+        "https://github.com/user-attachments/assets/5ff6e9df-9ffa-4adf-b9e6-620203fc72eb",
+      ],
+      tech: ["Angular", "TypeScript", "Express", "SQLite", "Node.js"],
     },
   ];
 
