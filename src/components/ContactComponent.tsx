@@ -11,6 +11,7 @@ function ContactComponent() {
 
   const contact = translations[language].contact;
 
+  // TODO: Uppdatera formuläret så att det skickar email via formspree + översätt till svenska
   return (
     <section id="contact" className="min-h-screen min-w-full py-50 px-6 bg-[#172025] text-white">
     <h3 className="text-3xl font-bold mb-6 text-center">{contact.heading}</h3>

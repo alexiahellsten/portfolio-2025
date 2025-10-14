@@ -1,14 +1,15 @@
 export const translations: Record<string, any> = {
   en: {
-      menu: {
+    menu: {
       about: "About",
       projects: "Projects",
       lia: "LIA",
       contact: "Contact",
     },
-      hero: {
+    hero: {
       title: "Hi! My name is Alexia",
-      subtitle: "I'm an aspiring full-stack developer looking for a LIA-internship in ",
+      subtitle:
+        "I'm an aspiring full-stack developer looking for a LIA-internship in ",
       location: "📌 Stockholm, SE",
       period: "November 2025 - May 2026",
       button: "View my projects",
@@ -26,7 +27,7 @@ export const translations: Record<string, any> = {
       `,
       link: "Read more about LIA here",
     },
-     lia: {
+    lia: {
       heading: "About LIA",
       sections: [
         {
@@ -57,14 +58,17 @@ export const translations: Record<string, any> = {
         {
           title: "Airbnb Clone",
           desc: "A school project where we made a clone of Airbnb using Angular, TypeScript, Express and SQLite.",
+          videodemo: "Video demo available on the GitHub page",
         },
         {
           title: "Freaky Fashion",
           desc: "A full-stack e-commerce store built with React, JavaScript, Tailwind CSS, Express and SQLite.",
+          videodemo: "Video demo available on the GitHub page",
         },
         {
           title: "Portfolio Website",
           desc: "My personal portfolio website built with React, TypeScript and Tailwind CSS.",
+          videodemo: "Video demo available on the GitHub page",
         },
       ],
     },
@@ -76,10 +80,11 @@ export const translations: Record<string, any> = {
       subheading4: "Dev Tools & Testing:",
       subheading5: "Templating & Static Sites:",
     },
-      contact: {
+    contact: {
       heading: "Contact me",
       text1: "Do you have any questions or want to collaborate on a project?",
-      text2: "Feel free to reach out, I'll get back to you as soon as possible!",
+      text2:
+        "Feel free to reach out, I'll get back to you as soon as possible!",
     },
     footer: {
       contactHeading: "Let's get in touch!",
@@ -88,15 +93,16 @@ export const translations: Record<string, any> = {
     },
   },
   sv: {
-      menu: {
+    menu: {
       about: "Om mig",
       projects: "Projekt",
       lia: "LIA",
       contact: "Kontakt",
     },
-      hero: {
+    hero: {
       title: "Hej! Jag heter Alexia",
-      subtitle: "Jag är en blivande fullstack-utvecklare som söker LIA-praktik i ",
+      subtitle:
+        "Jag är en blivande fullstack-utvecklare som söker LIA-praktik i ",
       location: "📌 Stockholm, SE",
       period: "November 2025 - Maj 2026",
       button: "Se mina projekt",
@@ -145,14 +151,17 @@ export const translations: Record<string, any> = {
         {
           title: "Airbnb-klon",
           desc: "Ett skolprojekt där vi skapade en klon av Airbnb med Angular, TypeScript, Express och SQLite.",
+          videodemo: "Video demo finns på GitHub-sidan",
         },
         {
           title: "Freaky Fashion",
           desc: "En fullstack e-handelsbutik byggd med React, JavaScript, Tailwind CSS, Express och SQLite.",
+          videodemo: "Video demo finns på GitHub-sidan",
         },
         {
           title: "Portfolio",
           desc: "Min personliga portfoliohemsida skapad med React, TypeScript och Tailwind CSS.",
+          videodemo: "Video demo finns på GitHub-sidan",
         },
       ],
     },
@@ -166,7 +175,7 @@ export const translations: Record<string, any> = {
       email: "alexia.hellsten@utb.ecutbildning.se",
       copyright: (year: number) => `Byggd med ❤️ av Alexia Hellsten © ${year}`,
     },
-      techgarden: {
+    techgarden: {
       heading: "🌼 Min digitala trädgård",
       subheading1: "Språk & Stilmallar:",
       subheading2: "Front-End Bibliotek och Ramverk:",
@@ -175,5 +184,5 @@ export const translations: Record<string, any> = {
       subheading5: "Templating & Statiska Webbplatser:",
     },
   },
-}
-export default translations
+};
+export default translations;
