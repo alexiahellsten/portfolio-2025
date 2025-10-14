@@ -1,5 +1,5 @@
-import { useContext } from "react"
-import { LanguageContext } from "../contexts/LanguageContext" 
+import { useContext } from "react";
+import { LanguageContext } from "../contexts/LanguageContext";
 import { translations } from "../translations/translations";
 
 function ContactComponent() {
@@ -13,15 +13,22 @@ function ContactComponent() {
 
   // TODO: Uppdatera formuläret så att det skickar email via formspree + översätt till svenska
   return (
-    <section id="contact" className="min-h-screen min-w-full py-50 px-6 bg-[#172025] text-white">
-    <h3 className="text-3xl font-bold mb-6 text-center">{contact.heading}</h3>
+    <section
+      id="contact"
+      className="min-h-screen min-w-full py-50 px-6 bg-[#172025] text-white"
+    >
+      <h3 className="text-3xl font-bold mb-6 text-center">{contact.heading}</h3>
 
-    <div className="max-w-2xl mx-auto mb-12 text-center">
-      <p>{contact.text1}</p>
-      <p>{contact.text2}</p>
-    </div>
+      <div className="max-w-2xl mx-auto mb-12 text-center">
+        <p>{contact.text1}</p>
+        <p>{contact.text2}</p>
+      </div>
 
-      <form className="max-w-md mx-auto flex flex-col gap-4">
+      <form
+        className="max-w-md mx-auto flex flex-col gap-4"
+        action="https://formsubmit.co/alexia.hellsten@utb.ecutbildning.se"
+        method="POST"
+      >
         <div className="flex flex-col gap-2">
           <label htmlFor="name" className="text-sm font-medium">
             Name
@@ -35,7 +42,7 @@ function ContactComponent() {
             className="p-3 rounded bg-[#2f3e46] text-white placeholder-stone-300 focus:outline-none focus:ring-2 focus:ring-[#ef798a]"
           />
         </div>
-        
+
         <div className="flex flex-col gap-2">
           <label htmlFor="email" className="text-sm font-medium">
             Email
@@ -49,7 +56,7 @@ function ContactComponent() {
             className="p-3 rounded bg-[#2f3e46] text-white placeholder-stone-300 focus:outline-none focus:ring-2 focus:ring-[#ef798a]"
           />
         </div>
-        
+
         <div className="flex flex-col gap-2">
           <label htmlFor="message" className="text-sm font-medium">
             Message
@@ -70,6 +77,6 @@ function ContactComponent() {
         </button>
       </form>
     </section>
-  )
+  );
 }
 export default ContactComponent;
