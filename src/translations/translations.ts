@@ -85,6 +85,13 @@ export const translations: Record<string, any> = {
       text1: "Do you have any questions or want to collaborate on a project?",
       text2:
         "Feel free to reach out, I'll get back to you as soon as possible!",
+      nameLabel: "Name",
+      emailLabel: "Email",
+      messageLabel: "Message",
+      namePlaceholder: "Your name",
+      emailPlaceholder: "Your email",
+      messagePlaceholder: "Your message",
+      buttonLabel: "Send",
     },
     footer: {
       contactHeading: "Let's get in touch!",
@@ -169,6 +176,13 @@ export const translations: Record<string, any> = {
       heading: "Kontakta mig",
       text1: "Har du några frågor eller vill samarbeta på ett projekt?",
       text2: "Hör gärna av er så återkommer jag så snart jag kan!",
+      nameLabel: "Namn",
+      emailLabel: "Email",
+      messageLabel: "Meddelande",
+      namePlaceholder: "Ditt namn",
+      emailPlaceholder: "Din email",
+      messagePlaceholder: "Ditt meddelande",
+      buttonLabel: "Skicka",
     },
     footer: {
       contactHeading: "Kontakta mig!",

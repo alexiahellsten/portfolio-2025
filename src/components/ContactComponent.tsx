@@ -24,20 +24,21 @@ function ContactComponent() {
         <p>{contact.text2}</p>
       </div>
 
+      {/* TODO: Fixa översättning av placeholder-text i formuläret */}
       <form
         className="max-w-md mx-auto flex flex-col gap-4"
-        action="https://formsubmit.co/alexia.hellsten@utb.ecutbildning.se"
+        action="https://formsubmit.co/42c7f140af7f4ede2f951625abb875e9"
         method="POST"
       >
         <div className="flex flex-col gap-2">
           <label htmlFor="name" className="text-sm font-medium">
-            Name
+            {contact.nameLabel}
           </label>
           <input
             type="text"
             id="name"
             name="name"
-            placeholder="Your name"
+            placeholder={contact.namePlaceholder}
             required
             className="p-3 rounded bg-[#2f3e46] text-white placeholder-stone-300 focus:outline-none focus:ring-2 focus:ring-[#ef798a]"
           />
@@ -45,13 +46,13 @@ function ContactComponent() {
 
         <div className="flex flex-col gap-2">
           <label htmlFor="email" className="text-sm font-medium">
-            Email
+            {contact.emailLabel}
           </label>
           <input
             type="email"
             id="email"
             name="email"
-            placeholder="Your email"
+            placeholder={contact.emailPlaceholder}
             required
             className="p-3 rounded bg-[#2f3e46] text-white placeholder-stone-300 focus:outline-none focus:ring-2 focus:ring-[#ef798a]"
           />
@@ -59,12 +60,12 @@ function ContactComponent() {
 
         <div className="flex flex-col gap-2">
           <label htmlFor="message" className="text-sm font-medium">
-            Message
+            {contact.messageLabel}
           </label>
           <textarea
             id="message"
             name="message"
-            placeholder="Your message"
+            placeholder={contact.messagePlaceholder}
             required
             className="p-3 rounded bg-[#2f3e46] text-white placeholder-stone-300 focus:outline-none focus:ring-2 focus:ring-[#ef798a] h-32 resize-none"
           ></textarea>
@@ -73,7 +74,7 @@ function ContactComponent() {
           type="submit"
           className="rounded-full p-3 font-semibold text-black bg-red-300 hover:bg-[#FFFFFF] transition-colors"
         >
-          Send
+          {contact.buttonLabel}
         </button>
       </form>
     </section>
