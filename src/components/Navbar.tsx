@@ -1,50 +1,42 @@
-import { useState, useContext } from "react"
-import { Link, useLocation } from "react-router-dom"
-import { Menu, X, Languages } from "lucide-react"
-import { LanguageContext } from "../contexts/LanguageContext"
-import translations from "../translations/translations"
+import { useState, useContext } from "react";
+import { Link } from "react-router-dom";
+import { Menu, X, Languages } from "lucide-react";
+import { LanguageContext } from "../contexts/LanguageContext";
+import translations from "../translations/translations";
 
 export default function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false)
-  const closeMenu = () => setMenuOpen(false)
+  const [menuOpen, setMenuOpen] = useState(false);
+  const closeMenu = () => setMenuOpen(false);
 
   // Hämtar språket från kontexten
-  const context = useContext(LanguageContext)
-  if (!context) throw new Error("LanguageContext not found")
-  const { language, toggleLanguage } = context
+  const context = useContext(LanguageContext);
+  if (!context) throw new Error("LanguageContext not found");
+  const { language, toggleLanguage } = context;
 
   // Meny med översättningar
   const menuItems = [
     { name: translations[language].menu.about, href: "/about" },
     { name: translations[language].menu.projects, href: "/projects" },
-    { name: translations[language].menu.lia, href: "/lia" },
     { name: translations[language].menu.contact, href: "/contact" },
-  ]
-
-  // Hämtar den aktuell platsen
-  const location = useLocation()
-
-  // Kontrollerar om användaren är på /home eller /lia
-  const lightMode = location.pathname === "/" || location.pathname === "/home" || location.pathname === "/lia"
+  ];
 
   return (
-    <nav className="inset-x-0 top-0 z-50">
+    <nav className='inset-x-0 top-0 z-50'>
       <div
-        className={`mx-auto flex items-center justify-between px-6 h-16 ${
-           lightMode ? "bg-[#F0EFF4]" : "bg-[#172025] text-red-200"
-        }`}
+        className='mx-auto flex items-center justify-between px-6 h-16 ${
+           bg-[#172025] text-red-200'
       >
-        <Link to="/">
-          <h1 className="text-2xl font-bold">Alexia Hellsten</h1>
+        <Link to='/'>
+          <h1 className='text-2xl font-bold'>Alexia Hellsten</h1>
         </Link>
 
         {/* Desktop */}
-        <ul className="hidden md:flex gap-6 list-none items-center absolute left-1/2 transform -translate-x-1/2">
+        <ul className='hidden md:flex gap-6 list-none items-center absolute left-1/2 transform -translate-x-1/2'>
           {menuItems.map((item) => (
             <li key={item.name}>
               <a
                 href={item.href}
-                className={`px-3 py-2 rounded-full text-md font-medium transition ${lightMode ? "hover:bg-[#172025] hover:text-white" : "text-red-200 hover:bg-[#FFF] hover:text-black"}`}
+                className='px-3 py-2 rounded-full text-md font-medium transition text-red-200 hover:bg-[#FFF] hover:text-black'
               >
                 {item.name}
               </a>
@@ -54,43 +46,45 @@ export default function Navbar() {
 
         {/* Toggle för språkvalet */}
         {/* TO DO: Lägg till någon rolig klick/hover-effekt, confetti eller regnbåge? */}
-        <div className="hidden md:block">
+        <div className='hidden md:block'>
           <button
             onClick={toggleLanguage}
-            className={`flex items-center gap-2 px-3 py-2 rounded-full text-md font-medium transition ${lightMode ? "hover:bg-[#172025] hover:text-white" : "text-red-200 hover:bg-[#FFF] hover:text-black"}`}
+            className='flex items-center gap-2 px-3 py-2 rounded-full text-md font-medium transition text-red-200 hover:bg-[#FFF] hover:text-black'
           >
-            <Languages className="h-5 w-5" />
+            <Languages className='h-5 w-5' />
             {language === "en" ? "Svenska" : "English"}
           </button>
         </div>
 
         {/* Mobil */}
-        <div className="flex items-center gap-2 md:hidden">
+        <div className='flex items-center gap-2 md:hidden'>
           <button
-            type="button"
-            className={`inline-flex items-center justify-center h-10 w-10 rounded-full transition ${lightMode ? "hover:bg-[#172025] hover:text-white" : "text-red-200 hover:bg-[#FFF] hover:text-black"}`}
-            aria-controls="mobile-menu"
+            type='button'
+            className='inline-flex items-center justify-center h-10 w-10 rounded-full transition text-red-200 hover:bg-[#FFF] hover:text-black'
+            aria-controls='mobile-menu'
             aria-expanded={menuOpen}
-            aria-label="Toggle menu"
+            aria-label='Toggle menu'
             onClick={() => setMenuOpen((v) => !v)}
           >
-            {menuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {menuOpen ? (
+              <X className='h-6 w-6' />
+            ) : (
+              <Menu className='h-6 w-6' />
+            )}
           </button>
         </div>
       </div>
 
       {/* Toggle för mobil */}
       {menuOpen && (
-        <div id="mobile-menu"  className={`md:hidden ${
-          lightMode ? "bg-[#F0EFF4]" : "bg-[#172025]"
-        }`}>
-          <ul className="list-none px-6 py-3 space-y-1">
+        <div id='mobile-menu' className='bg-[#172025] md:hiddenbg-[#172025]'>
+          <ul className='list-none px-6 py-3 space-y-1'>
             {menuItems.map((item) => (
               <li key={item.name}>
                 <a
                   href={item.href}
                   onClick={closeMenu}
-                  className={`block px-3 py-2 rounded-md text-base font-medium transition ${lightMode ? "hover:bg-[#172025] hover:text-white" : "text-red-200 hover:bg-[#FFF] hover:text-black"}`}
+                  className='block px-3 py-2 rounded-md text-base font-medium transition text-red-200 hover:bg-[#FFF] hover:text-black'
                 >
                   {item.name}
                 </a>
@@ -99,12 +93,12 @@ export default function Navbar() {
             <li>
               <button
                 onClick={() => {
-                  toggleLanguage()
-                  closeMenu()
+                  toggleLanguage();
+                  closeMenu();
                 }}
-                className={`flex items-center gap-2 w-full px-3 py-2 rounded-md text-base font-medium transition ${lightMode ? "hover:bg-[#172025] hover:text-white" : "text-red-200 hover:bg-[#FFF] hover:text-black"}`}
+                className='flex items-center gap-2 w-full px-3 py-2 rounded-md text-base font-medium transition text-red-200 hover:bg-[#FFF] hover:text-black'
               >
-                <Languages className="h-5 w-5" />
+                <Languages className='h-5 w-5' />
                 {language === "en" ? "Svenska" : "English"}
               </button>
             </li>
@@ -112,5 +106,5 @@ export default function Navbar() {
         </div>
       )}
     </nav>
-  )
+  );
 }
