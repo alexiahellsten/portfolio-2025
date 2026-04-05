@@ -8,24 +8,25 @@ export const translations: Record<string, any> = {
     },
     hero: {
       title: "Hi! My name is Alexia",
-      subtitle:
-        "I'm an aspiring full-stack developer looking for a LIA-internship in ",
+      subtitle: "I'm a full-stack developer looking for a junior position in ",
       location: "📌 Stockholm, SE",
-      period: "November 2025 - May 2026",
+      period: "When? Fall of 2026",
       button: "View my projects",
     },
     about: {
       title: "About me",
       text: `
-        I'm a 29 year old frontend development student at EC Utbildning, currently living in Stockholm. I'm passionate about working across the whole stack and care deeply about the human experience behind the tech.
+        I'm a 30 year old frontend development student from Stockholm, graduating this june.
+        
+        Currently I'm on my LIA period where I've been gaining valuable hands-on experience in developing real-world applications, which I'll be taking with me to my new role. 
+        
+        I'm looking for a junior position this fall, where I can continue to create company value and grow as a developer, preferrably working across the whole stack. 
+        
+        The reason I fell in love with programming was because it's fun and creative, and there is always something new to learn. I also care deeply about the human experience behind the tech. 
 
-        I fell in love with programming because it's fun and creative, and there is always something new to learn!
-
-        When I’m not coding, I'm most likely sketching an art project, curating the perfect playlist, projecting the climbing wall, or sipping coffee like it’s part of my tech stack.
-
-        I'm very eager to learn more and gain hands-on experience, which is why I'm currently looking for a LIA internship in Stockholm from November 2025 to May 2026.
+        When I’m not developing, I'm most likely sketching an art project, curating the perfect playlist or falling off the climbing wall (I guess you can't be good at everything, but I'm trying!).
       `,
-      link: "Read more about LIA here",
+      link: "Take a look at my projects!",
     },
     lia: {
       heading: "About LIA",
@@ -109,23 +110,25 @@ export const translations: Record<string, any> = {
     hero: {
       title: "Hej! Jag heter Alexia",
       subtitle:
-        "Jag är en blivande fullstack-utvecklare som söker LIA-praktik i ",
+        "Jag är en fullstack-utvecklare som söker en junior position i ",
       location: "📌 Stockholm, SE",
-      period: "November 2025 - Maj 2026",
+      period: "När? Hösten 2026",
       button: "Se mina projekt",
     },
     about: {
       title: "Om mig",
       text: `
-        Jag är en 29-årig student i frontendutveckling på EC Utbildning som bor i Stockholm. Jag har en passion för att arbeta med både front-end och back-end och har ett stort intresse för människorna bakom tekniken.
+        Jag är en 30-årig student i frontendutveckling som bor i Stockholm och tar examen i juni.
 
-        Jag fastnade för programmering för att det är roligt och kreativt, det finns alltid något nytt att lära sig!
+        Just nu är jag ute på min LIA-period där jag får värdefull raktisk erfarenhet av att utveckla verkliga applikationer, som jag tar med mig in i min nya roll.
 
-        När jag inte kodar sitter jag troligtvis och skissar på ett konstprojekt, skapar den perfekta spellistan, löser problem på klätterväggen eller dricker kaffe som om det vore en del av min digitala verktygslåda.
+        Till hösten söker jag en junior position där jag kan fortsätta skapa värde för företag samtidigt som jag utvecklas inom rollen, gärna med möjlighet att arbeta över hela stacken.
 
-        Jag är väldigt ivrig att lära mig mer och få praktisk erfarenhet, vilket är varför jag nu söker en LIA-praktikplats i Stockholm från november 2025 till maj 2026.
+        Jag fastnade för programmering för att det är roligt och kreativt, och att det alltid finns något nytt att lära sig. Samtidigt bryr jag mig mycket om människorna bakom tekniken och upplevelsen den skapar. 
+        
+        När jag inte utvecklar sitter jag troligtvis och skissar på ett konstprojekt, skapar den perfekta spellistan eller ramlar ned från klätterväggen (man kan ju inte vara bra på allt, men jag försöker!).
       `,
-      link: "Läs mer om LIA här",
+      link: "Ta en titt på mina projekt!",
     },
     lia: {
       heading: "Om LIA",
