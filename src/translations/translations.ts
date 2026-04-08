@@ -122,9 +122,9 @@ export const translations: Record<string, any> = {
       text: `
         Jag är en 30-årig student i frontendutveckling som bor i Stockholm och tar examen i juni.
 
-        Just nu är jag ute på min LIA-period där jag får värdefull raktisk erfarenhet av att utveckla verkliga applikationer, som jag tar med mig in i min nya roll.
+        Just nu är jag ute på min LIA-period där jag får värdefull praktisk erfarenhet av att utveckla verkliga applikationer, som jag tar med mig in i min nya roll.
 
-        Till hösten söker jag en junior position där jag kan fortsätta skapa värde för företag samtidigt som jag utvecklas inom rollen, gärna med möjlighet att arbeta över hela stacken.
+        Till hösten söker jag en junior position där jag kan fortsätta skapa värde för företag samtidigt som jag utvecklas, gärna med möjlighet att arbeta över hela stacken.
 
         Jag fastnade för programmering för att det är roligt och kreativt, och att det alltid finns något nytt att lära sig. Samtidigt bryr jag mig mycket om människorna bakom tekniken och upplevelsen den skapar. 
         
@@ -196,13 +196,13 @@ export const translations: Record<string, any> = {
     },
     techgarden: {
       heading: "Min digitala verktygslåda",
-      subheading1: "Språk & Stilmallar:",
+      subheading1: "Språk och stilmallar:",
       subheading2: "Ramverk och bibliotek:",
-      subheading3: "Back-End, API & Databaser:",
-      subheading4: "Verktyg & Samarbete:",
+      subheading3: "Back-End, API och databaser:",
+      subheading4: "Verktyg och samarbete:",
       subheading5: "Testning:",
-      subheading6: "Design & UX:",
-      subheading7: "Templating & Statiska Webbplatser:",
+      subheading6: "Design och UX:",
+      subheading7: "Templating och statiska webbplatser:",
     },
   },
 };
