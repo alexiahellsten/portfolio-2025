@@ -23,7 +23,7 @@ export default function TechGarden() {
         <p className='py-4'>
           <Pill>JavaScript</Pill> <Pill>TypeScript</Pill> <Pill>C#</Pill>{" "}
           <Pill>HTML</Pill> <Pill>CSS</Pill> <Pill>Sass</Pill>{" "}
-          <Pill>Tailwind CSS</Pill>{" "}
+          <Pill>Tailwind CSS</Pill> <Pill>Material UI</Pill>{" "}
         </p>
 
         <h3 className='font-semibold mt-4'>{techgarden.subheading2}</h3>
