@@ -121,6 +121,12 @@ export const translations: Record<string, any> = {
       email: "hello@alexiahellsten.dev",
       copyright: (year: number) => `Built with ❤️ by Alexia Hellsten © ${year}`,
     },
+    notFound: {
+      label: "404",
+      heading: "Page not found",
+      text: "The page you're looking for does not exist or may have been moved.",
+      button: "Back to home",
+    },
   },
   sv: {
     menu: {
@@ -233,6 +239,12 @@ export const translations: Record<string, any> = {
       contactHeading: "Kontakta mig!",
       email: "hello@alexiahellsten.dev",
       copyright: (year: number) => `Byggd med ❤️ av Alexia Hellsten © ${year}`,
+    },
+    notFound: {
+      label: "404",
+      heading: "Sidan hittades inte",
+      text: "Sidan du letar efter finns inte eller kan ha flyttats.",
+      button: "Tillbaka till startsidan",
     },
     techgarden: {
       heading: "Min digitala verktygslåda",
