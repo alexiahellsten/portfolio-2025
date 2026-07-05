@@ -4,12 +4,10 @@ import { LanguageContext } from "../contexts/LanguageContext";
 import translations from "../translations/translations";
 
 export default function Hero() {
-  // Hämtar språket från kontexten
   const context = useContext(LanguageContext);
   if (!context) throw new Error("LanguageContext not found");
   const { language } = context;
 
-  // Hämtar översättningar för hero-komponenten
   const hero = translations[language].hero;
 
   return (

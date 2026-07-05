@@ -8,12 +8,10 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const closeMenu = () => setMenuOpen(false);
 
-  // Hämtar språket från kontexten
   const context = useContext(LanguageContext);
   if (!context) throw new Error("LanguageContext not found");
   const { language, toggleLanguage } = context;
 
-  // Meny med översättningar
   const menuItems = [
     { name: translations[language].menu.about, href: "/about" },
     { name: translations[language].menu.projects, href: "/projects" },
@@ -23,14 +21,13 @@ export default function Navbar() {
   return (
     <nav className='inset-x-0 top-0 z-50'>
       <div
-        className='mx-auto flex items-center justify-between px-6 h-16 ${
-           bg-[#172025] text-red-200'
+        className='mx-auto flex items-center justify-between px-6 h-16
+      bg-[#172025] text-red-200'
       >
         <Link to='/'>
           <h1 className='text-2xl font-bold'>Alexia Hellsten</h1>
         </Link>
 
-        {/* Desktop */}
         <ul className='hidden md:flex gap-6 list-none items-center absolute left-1/2 transform -translate-x-1/2'>
           {menuItems.map((item) => (
             <li key={item.name}>
@@ -44,8 +41,6 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* Toggle för språkvalet */}
-        {/* TO DO: Lägg till någon rolig klick/hover-effekt, confetti eller regnbåge? */}
         <div className='hidden md:block'>
           <button
             onClick={toggleLanguage}
@@ -56,7 +51,6 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Mobil */}
         <div className='flex items-center gap-2 md:hidden'>
           <button
             type='button'
@@ -75,9 +69,8 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Toggle för mobil */}
       {menuOpen && (
-        <div id='mobile-menu' className='bg-[#172025] md:hiddenbg-[#172025]'>
+        <div id='mobile-menu' className='bg-[#172025] md:hidden'>
           <ul className='list-none px-6 py-3 space-y-1'>
             {menuItems.map((item) => (
               <li key={item.name}>

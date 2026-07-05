@@ -4,7 +4,6 @@ import { LanguageContext } from "../contexts/LanguageContext";
 import translations from "../translations/translations";
 
 export default function Footer() {
-  // Hämtar språket från kontexten
   const context = useContext(LanguageContext);
   if (!context) {
     return null;
@@ -12,7 +11,6 @@ export default function Footer() {
 
   const { language } = context;
 
-  // Hämtar översättningar för footer-komponenten
   const footer = translations[language].footer;
   const year = new Date().getFullYear();
 
