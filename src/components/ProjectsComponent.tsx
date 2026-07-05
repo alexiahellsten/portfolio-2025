@@ -49,48 +49,48 @@ function ProjectsComponent() {
 
   return (
     <section
-      id="projects"
-      className="min-h-screen px-4 py-28 bg-[#172025] text-white"
+      id='projects'
+      className='min-h-screen px-4 py-28 bg-brand-bg text-white'
     >
-      <h3 className="text-4xl font-bold mb-4 text-center">
+      <h3 className='text-4xl font-bold mb-4 text-center'>
         {projects.heading}
       </h3>
-      <p className="text-center mb-16 text-lg">{projects.subheading}</p>
+      <p className='text-center mb-16 text-lg'>{projects.subheading}</p>
 
-      <div className="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
+      <div className='grid md:grid-cols-3 gap-10 max-w-6xl mx-auto'>
         {projectItems.map((project, index) => (
           <div
             key={index}
-            className="rounded-2xl overflow-hidden bg-[#1f2a30] hover:scale-[1.02] transition-transform flex flex-col h-full"
+            className='rounded-2xl overflow-hidden bg-brand-surface hover:scale-[1.02] transition-transform flex flex-col h-full'
           >
-            <div className="relative group">
+            <div className='relative group'>
               <img
                 src={project.img}
                 alt={project.title}
-                className="w-full h-52 object-cover"
+                className='w-full h-52 object-cover'
               />
             </div>
 
-            <div className="p-6 flex flex-col flex-1">
-              <h4 className="text-2xl font-semibold mb-2">{project.title}</h4>
-              <p className="mb-4 text-md">{project.desc}</p>
+            <div className='p-6 flex flex-col flex-1'>
+              <h4 className='text-2xl font-semibold mb-2'>{project.title}</h4>
+              <p className='mb-4 text-md'>{project.desc}</p>
 
-              <div className="flex flex-wrap gap-2 mb-4">
+              <div className='flex flex-wrap gap-2 mb-4'>
                 {project.tech.map((tech: string, index: number) => (
                   <span
                     key={index}
-                    className="markdown bg-white/10 text-xs px-2 py-1 rounded-full text-red-200"
+                    className='markdown bg-white/10 text-xs px-2 py-1 rounded-full text-accent-light'
                   >
                     {tech}
                   </span>
                 ))}
               </div>
 
-              <div className="mt-auto flex justify-between font-semibold">
+              <div className='mt-auto flex justify-between font-semibold'>
                 {project.github && (
                   <a
                     href={project.github}
-                    className="text-red-200 hover:underline"
+                    className='text-accent-light hover:underline'
                   >
                     GitHub
                   </a>
@@ -98,14 +98,14 @@ function ProjectsComponent() {
                 {project.demo && project.demo !== "#" && (
                   <a
                     href={project.demo}
-                    className="text-red-200 hover:underline"
+                    className='text-accent-light hover:underline'
                   >
                     Demo
                   </a>
                 )}
               </div>
               {project.videos && project.videos.length > 0 && (
-                <p className="text-gray-400 text-sm">{project.videodemo}</p>
+                <p className='text-gray-400 text-sm'>{project.videodemo}</p>
               )}
             </div>
           </div>

@@ -14,7 +14,7 @@ function ServicesComponent() {
   return (
     <section
       id='services'
-      className='min-h-screen flex flex-col items-center justify-center bg-[#172025] text-white px-4 py-16'
+      className='min-h-screen flex flex-col items-center justify-center bg-brand-bg text-white px-4 py-16'
     >
       <div className='mb-8 max-w-2xl text-center'>
         <h3 className='text-3xl md:text-4xl font-bold mb-8 text-center'>
@@ -27,7 +27,7 @@ function ServicesComponent() {
         {services.cards.map((card: { title: string; text: string }) => (
           <div
             key={card.title}
-            className='flex flex-1 flex-col max-w-sm mx-auto bg-[#1e2a33] p-6 rounded-lg justify-center align-center'
+            className='flex flex-1 flex-col max-w-sm mx-auto bg-brand-surface p-6 rounded-lg justify-center align-center'
           >
             <h4 className='font-semibold'>{card.title}</h4>
             <p className='text-base md:text-lg leading-relaxed whitespace-pre-line'>

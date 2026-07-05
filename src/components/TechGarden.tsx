@@ -13,7 +13,7 @@ export default function TechGarden() {
   const techgarden = translations[language].techgarden;
 
   return (
-    <section className='max-w-4xl mx-auto p-20 my-16 bg-[#2f3e46] text-white'>
+    <section className='max-w-4xl mx-auto p-20 my-16 bg-brand-surface-alt text-white'>
       <h2 className='text-3xl sm:text-4xl font-bold mb-4'>
         {techgarden.heading}
       </h2>

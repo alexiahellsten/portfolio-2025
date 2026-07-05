@@ -22,7 +22,7 @@ export default function Navbar() {
     <nav className='inset-x-0 top-0 z-50'>
       <div
         className='mx-auto flex items-center justify-between px-6 h-16
-      bg-[#172025] text-red-200'
+      bg-brand-bg text-accent-light'
       >
         <Link to='/'>
           <h1 className='text-2xl font-bold'>Alexia Hellsten</h1>
@@ -33,7 +33,7 @@ export default function Navbar() {
             <li key={item.name}>
               <a
                 href={item.href}
-                className='px-3 py-2 rounded-full text-md font-medium transition text-red-200 hover:bg-[#FFF] hover:text-black'
+                className='px-3 py-2 rounded-full text-md font-medium transition text-accent-light hover:bg-white hover:text-black'
               >
                 {item.name}
               </a>
@@ -44,7 +44,7 @@ export default function Navbar() {
         <div className='hidden md:block'>
           <button
             onClick={toggleLanguage}
-            className='flex items-center gap-2 px-3 py-2 rounded-full text-md font-medium transition text-red-200 hover:bg-[#FFF] hover:text-black'
+            className='flex items-center gap-2 px-3 py-2 rounded-full text-md font-medium transition text-accent-light hover:bg-white hover:text-black'
           >
             <Languages className='h-5 w-5' />
             {language === "en" ? "Svenska" : "English"}
@@ -54,7 +54,7 @@ export default function Navbar() {
         <div className='flex items-center gap-2 md:hidden'>
           <button
             type='button'
-            className='inline-flex items-center justify-center h-10 w-10 rounded-full transition text-red-200 hover:bg-[#FFF] hover:text-black'
+            className='inline-flex items-center justify-center h-10 w-10 rounded-full transition text-accent-light hover:bg-white hover:text-black'
             aria-controls='mobile-menu'
             aria-expanded={menuOpen}
             aria-label='Toggle menu'
@@ -70,14 +70,14 @@ export default function Navbar() {
       </div>
 
       {menuOpen && (
-        <div id='mobile-menu' className='bg-[#172025] md:hidden'>
+        <div id='mobile-menu' className='bg-brand-bg md:hidden'>
           <ul className='list-none px-6 py-3 space-y-1'>
             {menuItems.map((item) => (
               <li key={item.name}>
                 <a
                   href={item.href}
                   onClick={closeMenu}
-                  className='block px-3 py-2 rounded-md text-base font-medium transition text-red-200 hover:bg-[#FFF] hover:text-black'
+                  className='block px-3 py-2 rounded-md text-base font-medium transition text-accent-light hover:bg-white hover:text-black'
                 >
                   {item.name}
                 </a>
@@ -89,7 +89,7 @@ export default function Navbar() {
                   toggleLanguage();
                   closeMenu();
                 }}
-                className='flex items-center gap-2 w-full px-3 py-2 rounded-md text-base font-medium transition text-red-200 hover:bg-[#FFF] hover:text-black'
+                className='flex items-center gap-2 w-full px-3 py-2 rounded-md text-base font-medium transition text-accent-light hover:bg-white hover:text-black'
               >
                 <Languages className='h-5 w-5' />
                 {language === "en" ? "Svenska" : "English"}

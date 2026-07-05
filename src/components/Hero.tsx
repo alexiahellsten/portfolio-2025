@@ -11,7 +11,7 @@ export default function Hero() {
   const hero = translations[language].hero;
 
   return (
-    <section className='h-screen flex flex-col justify-center items-center text-center  bg-[#172025] text-white'>
+    <section className='h-screen flex flex-col justify-center items-center text-center  bg-brand-bg text-white'>
       <h2 className='text-5xl font-bold mb-4'>{hero.title}</h2>
 
       <div>
@@ -21,7 +21,7 @@ export default function Hero() {
       <span className='mt-2'>{hero.period}</span>
       <Link
         to='/projects'
-        className='text-black px-6 py-3 rounded-full font-semibold  bg-red-300 hover:bg-[#FFFFFF] mt-6'
+        className='text-black px-6 py-3 rounded-full font-semibold  bg-accent hover:bg-white mt-6'
       >
         {hero.button}
       </Link>

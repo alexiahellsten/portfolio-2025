@@ -17,7 +17,7 @@ function AboutComponent() {
   return (
     <section
       id='about'
-      className='min-h-screen flex flex-col items-center justify-center bg-[#172025] text-white px-4 py-16'
+      className='min-h-screen flex flex-col items-center justify-center bg-brand-bg text-white px-4 py-16'
     >
       <h3 className='text-3xl md:text-4xl font-bold mb-8 text-center'>
         {about.title}
@@ -26,7 +26,7 @@ function AboutComponent() {
         {about.text}
       </p>
       {isAboutPage && (
-        <Link to='/projects' className='text-red-300 mt-14'>
+        <Link to='/projects' className='text-accent-light mt-14'>
           {about.link}
         </Link>
       )}

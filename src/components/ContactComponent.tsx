@@ -14,7 +14,7 @@ function ContactComponent() {
   return (
     <section
       id='contact'
-      className='min-h-screen min-w-full py-50 px-6 bg-[#172025] text-white'
+      className='min-h-screen min-w-full py-50 px-6 bg-brand-bg text-white'
     >
       <h3 className='text-3xl font-bold mb-6 text-center'>{contact.heading}</h3>
 
@@ -38,7 +38,7 @@ function ContactComponent() {
             name='name'
             placeholder={contact.namePlaceholder}
             required
-            className='p-3 rounded bg-[#2f3e46] text-white placeholder-stone-300 focus:outline-none focus:ring-2 focus:ring-[#ef798a]'
+            className='p-3 rounded bg-brand-surface-alt text-white placeholder-stone-300 focus:outline-none focus:ring-2 focus:ring-accent'
           />
         </div>
 
@@ -52,7 +52,7 @@ function ContactComponent() {
             name='email'
             placeholder={contact.emailPlaceholder}
             required
-            className='p-3 rounded bg-[#2f3e46] text-white placeholder-stone-300 focus:outline-none focus:ring-2 focus:ring-[#ef798a]'
+            className='p-3 rounded bg-brand-surface-alt text-white placeholder-stone-300 focus:outline-none focus:ring-2 focus:ring-accent'
           />
         </div>
 
@@ -65,12 +65,12 @@ function ContactComponent() {
             name='message'
             placeholder={contact.messagePlaceholder}
             required
-            className='p-3 rounded bg-[#2f3e46] text-white placeholder-stone-300 focus:outline-none focus:ring-2 focus:ring-[#ef798a] h-32 resize-none'
+            className='p-3 rounded bg-brand-surface-alt text-white placeholder-stone-300 focus:outline-none focus:ring-2 focus:ring-accent h-32 resize-none'
           ></textarea>
         </div>
         <button
           type='submit'
-          className='rounded-full p-3 font-semibold text-black bg-red-300 hover:bg-[#FFFFFF] transition-colors'
+          className='rounded-full p-3 font-semibold text-black bg-accent hover:bg-white transition-colors'
         >
           {contact.buttonLabel}
         </button>
