@@ -23,7 +23,7 @@ export default function Hero() {
       <span className='mt-2'>{hero.period}</span>
       <Link
         to='/projects'
-        className='text-black px-6 py-3 rounded-full font-semibold  text-black bg-red-300 hover:bg-[#FFFFFF] mt-6'
+        className='text-black px-6 py-3 rounded-full font-semibold  bg-red-300 hover:bg-[#FFFFFF] mt-6'
       >
         {hero.button}
       </Link>

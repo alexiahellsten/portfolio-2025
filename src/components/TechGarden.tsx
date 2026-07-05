@@ -35,8 +35,7 @@ export default function TechGarden() {
         <h3 className='font-semibold mt-4'>{techgarden.subheading3}</h3>
         <p className='py-4'>
           <Pill>Node.js (Express)</Pill> <Pill>ASP.NET Core</Pill>{" "}
-          <Pill>Express</Pill> <Pill>MongoDB (Mongoose)</Pill>{" "}
-          <Pill>SQLite</Pill>
+          <Pill>MongoDB (Mongoose)</Pill> <Pill>SQLite</Pill>
         </p>
 
         <h3 className='font-semibold mt-4'>{techgarden.subheading4}</h3>

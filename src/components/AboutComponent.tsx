@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { LanguageContext } from "../contexts/LanguageContext";
 import { translations } from "../translations/translations";
 
@@ -9,6 +9,8 @@ function AboutComponent() {
     return null;
   }
   const { language } = context;
+  const location = useLocation();
+  const isAboutPage = location.pathname === "/about";
 
   const about = translations[language].about;
 
@@ -23,9 +25,11 @@ function AboutComponent() {
       <p className='max-w-2xl mx-auto text-base md:text-lg text-left leading-relaxed whitespace-pre-line'>
         {about.text}
       </p>
-      <Link to='/projects' className='text-red-300 mt-14'>
-        {about.link}
-      </Link>
+      {isAboutPage && (
+        <Link to='/projects' className='text-red-300 mt-14'>
+          {about.link}
+        </Link>
+      )}
     </section>
   );
 }
