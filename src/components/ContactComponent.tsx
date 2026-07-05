@@ -25,7 +25,7 @@ function ContactComponent() {
 
       <form
         className='max-w-md mx-auto flex flex-col gap-4'
-        action='https://formsubmit.co/f1f5dddfcb8879ac51af158cede5744e'
+        action={import.meta.env.VITE_CONTACT_FORM_ENDPOINT}
         method='POST'
       >
         <div className='flex flex-col gap-2'>
