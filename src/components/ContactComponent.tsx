@@ -14,7 +14,7 @@ function ContactComponent() {
   return (
     <section
       id='contact'
-      className='min-h-screen min-w-full py-50 px-6 bg-brand-bg text-white'
+      className='min-h-screen min-w-full py-6 px-6 md:py-12 lg:py-20 bg-brand-bg text-white'
     >
       <h3 className='text-3xl font-bold mb-6 text-center'>{contact.heading}</h3>
 
