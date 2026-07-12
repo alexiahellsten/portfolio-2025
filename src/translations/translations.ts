@@ -441,6 +441,7 @@ export const translations: Record<"en" | "sv", Translations> = {
             "C#",
             "MongoDB (Mongoose)",
             "SQLite",
+            "Entity Framework Core",
           ],
         },
         {
