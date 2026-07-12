@@ -22,7 +22,7 @@ function ProjectsComponent({ asPage = false }: ProjectsComponentProps) {
       ...projects.items[0],
       img: "images/portfolio.png",
       github: "https://github.com/alexiahellsten/portfolio-2025",
-      demo: "https://alexiahellsten.vercel.app",
+      demo: "https://alexiahellsten.dev",
       tech: ["React", "TypeScript", "Tailwind", "Vite"],
     },
     {
