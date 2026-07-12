@@ -1,35 +1,52 @@
 import { useContext } from "react";
-import { Link, useLocation } from "react-router-dom";
 import { LanguageContext } from "../contexts/LanguageContext";
 import { translations } from "../translations/translations";
 
-function AboutComponent() {
+type AboutComponentProps = {
+  asPage?: boolean;
+};
+
+function AboutComponent({ asPage = false }: AboutComponentProps) {
   const context = useContext(LanguageContext);
+
   if (!context) {
     return null;
   }
   const { language } = context;
-  const location = useLocation();
-  const isAboutPage = location.pathname === "/about";
-
   const about = translations[language].about;
+  const TitleTag = asPage ? "h1" : "h2";
 
   return (
     <section
       id='about'
-      className='min-h-screen flex flex-col items-center justify-center bg-brand-bg text-white px-4 py-16'
+      className={`section ${asPage ? "section-centered" : ""}`}
+      aria-labelledby='about-title'
     >
-      <h3 className='text-3xl md:text-4xl font-bold mb-8 text-center'>
-        {about.title}
-      </h3>
-      <p className='max-w-2xl mx-auto text-base md:text-lg text-left leading-relaxed whitespace-pre-line'>
-        {about.text}
-      </p>
-      {isAboutPage && (
-        <Link to='/projects' className='text-accent-light mt-14'>
-          {about.link}
-        </Link>
-      )}
+      <div className='section-inner'>
+        <p className='section-label mb-3'>{about.label}</p>
+        <TitleTag
+          id='about-title'
+          className='text-2xl font-bold sm:text-3xl md:text-4xl'
+        >
+          {about.title}
+        </TitleTag>
+
+        <ul className='mt-6 space-y-3 text-base leading-relaxed text-brand-muted md:mt-8 md:space-y-4 md:text-lg'>
+          {about.highlights.map((item: string) => (
+            <li key={item} className='flex gap-3'>
+              <span
+                className='mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent-primary'
+                aria-hidden='true'
+              />
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+
+        <p className='mt-6 text-base leading-relaxed text-brand-muted md:mt-8 md:text-lg'>
+          {about.aside}
+        </p>
+      </div>
     </section>
   );
 }

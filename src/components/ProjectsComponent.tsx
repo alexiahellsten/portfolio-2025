@@ -1,14 +1,21 @@
 import { useContext } from "react";
 import { LanguageContext } from "../contexts/LanguageContext";
-import translations from "../translations/translations";
+import { translations } from "../translations/translations";
 
-function ProjectsComponent() {
+type ProjectsComponentProps = {
+  asPage?: boolean;
+};
+
+function ProjectsComponent({ asPage = false }: ProjectsComponentProps) {
   const context = useContext(LanguageContext);
 
   if (!context) return null;
   const { language } = context;
 
   const projects = translations[language].projects;
+
+  const chipClass =
+    "inline-flex items-center rounded-full border border-brand-border bg-brand-surface-alt px-3 py-1.5 text-xs font-medium text-brand-muted transition-colors duration-200 hover:border-accent-primary/40 hover:text-brand-fg";
 
   const projectItems = [
     {
@@ -47,69 +54,86 @@ function ProjectsComponent() {
     },
   ];
 
+  const TitleTag = asPage ? "h1" : "h2";
+
   return (
     <section
       id='projects'
-      className='min-h-screen px-4 py-28 bg-brand-bg text-white'
+      className={`section ${asPage ? "section-centered" : ""}`}
+      aria-labelledby='projects-title'
     >
-      <h3 className='text-4xl font-bold mb-4 text-center'>
-        {projects.heading}
-      </h3>
-      <p className='text-center mb-16 text-lg'>{projects.subheading}</p>
-
-      <div className='grid md:grid-cols-3 gap-10 max-w-6xl mx-auto'>
-        {projectItems.map((project, index) => (
-          <div
-            key={index}
-            className='rounded-2xl overflow-hidden bg-brand-surface hover:scale-[1.02] transition-transform flex flex-col h-full'
+      <div className='section-inner section-stack'>
+        <div className='section-prose'>
+          <p className='section-label mb-3'>{projects.label}</p>
+          <TitleTag
+            id='projects-title'
+            className='text-2xl font-bold sm:text-3xl md:text-4xl'
           >
-            <div className='relative group'>
-              <img
-                src={project.img}
-                alt={project.title}
-                className='w-full h-52 object-cover'
-              />
-            </div>
+            {projects.heading}
+          </TitleTag>
+          <p className='mt-4 text-base leading-relaxed text-brand-muted sm:text-lg'>
+            {projects.subheading}
+          </p>
+        </div>
 
-            <div className='p-6 flex flex-col flex-1'>
-              <h4 className='text-2xl font-semibold mb-2'>{project.title}</h4>
-              <p className='mb-4 text-md'>{project.desc}</p>
-
-              <div className='flex flex-wrap gap-2 mb-4'>
-                {project.tech.map((tech: string, index: number) => (
-                  <span
-                    key={index}
-                    className='markdown bg-white/10 text-xs px-2 py-1 rounded-full text-accent-light'
-                  >
-                    {tech}
-                  </span>
-                ))}
+        <div className='grid gap-4 sm:grid-cols-2 md:gap-6 lg:grid-cols-3'>
+          {projectItems.map((project) => (
+            <div
+              key={project.title}
+              className='group flex h-full flex-col overflow-hidden rounded-3xl border border-brand-border bg-brand-surface'
+            >
+              <div className='relative aspect-16/10 w-full overflow-hidden'>
+                <img
+                  src={project.img}
+                  alt={project.imageAlt}
+                  loading='lazy'
+                  className='h-full w-full object-cover transition-transform duration-300 ease-out group-hover:scale-105'
+                />
               </div>
 
-              <div className='mt-auto flex justify-between font-semibold'>
-                {project.github && (
-                  <a
-                    href={project.github}
-                    className='text-accent-light hover:underline'
-                  >
-                    GitHub
-                  </a>
-                )}
-                {project.demo && project.demo !== "#" && (
-                  <a
-                    href={project.demo}
-                    className='text-accent-light hover:underline'
-                  >
-                    Demo
-                  </a>
-                )}
+              <div className='flex flex-1 flex-col p-5 md:p-6'>
+                <h3 className='text-xl font-semibold sm:text-2xl'>
+                  {project.title}
+                </h3>
+                <p className='mt-3 text-base leading-relaxed text-brand-muted md:mt-4'>
+                  {project.desc}
+                </p>
+
+                <div className='mt-6 flex flex-wrap gap-2 md:mt-8'>
+                  {project.tech.map((tech: string, techIndex: number) => (
+                    <span key={techIndex} className={chipClass}>
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+                <div className='mt-8 flex items-center justify-between gap-4 border-t border-brand-border pt-5 font-semibold md:mt-10'>
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      aria-label={projects.githubAria(project.title)}
+                      className='inline-flex items-center gap-2 text-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2 focus-visible:ring-offset-brand-surface rounded-sm'
+                    >
+                      {project.GithubText}
+                    </a>
+                  )}
+                  {project.demo && project.demo !== "#" && (
+                    <a
+                      href={project.demo}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      aria-label={projects.demoAria(project.title)}
+                      className='inline-flex items-center gap-2 text-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-primary focus-visible:ring-offset-2 focus-visible:ring-offset-brand-surface rounded-sm'
+                    >
+                      {project.demoText}
+                    </a>
+                  )}
+                </div>
               </div>
-              {project.videos && project.videos.length > 0 && (
-                <p className='text-gray-400 text-sm'>{project.videodemo}</p>
-              )}
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );
