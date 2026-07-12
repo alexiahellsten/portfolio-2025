@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { LanguageContext } from "../contexts/LanguageContext";
 import { translations } from "../translations/translations";
-import Button from "../components/Button";
+import { ButtonLink } from "../components/Button";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import PageTitle from "../components/PageTitle";
@@ -33,9 +33,7 @@ function NotFound() {
             <p className='text-base sm:text-lg text-brand-muted'>
               {notFound.text}
             </p>
-            <Button as='link' to='/'>
-              {notFound.button}
-            </Button>
+            <ButtonLink to='/'>{notFound.button}</ButtonLink>
           </div>
         </main>
       </Reveal>
