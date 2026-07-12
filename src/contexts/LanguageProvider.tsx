@@ -1,14 +1,6 @@
-import { createContext, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import type { ReactNode, ReactElement } from "react";
-
-type LanguageContextType = {
-  language: "en" | "sv";
-  toggleLanguage: () => void;
-};
-
-export const LanguageContext = createContext<LanguageContextType | undefined>(
-  undefined,
-);
+import { LanguageContext } from "./LanguageContext";
 
 type Props = { children: ReactNode };
 
