@@ -1,4 +1,125 @@
-export const translations: Record<string, any> = {
+type MetaTitles = {
+  home: string;
+  about: string;
+  projects: string;
+  contact: string;
+  notFound: string;
+};
+
+type Menu = {
+  about: string;
+  projects: string;
+  contact: string;
+  navAriaLabel: string;
+  toggleMenu: string;
+  switchLanguage: string;
+};
+
+type Hero = {
+  badge: string;
+  title: string;
+  subtitle: string;
+  location: string;
+  availability: string;
+  button: string;
+};
+
+type About = {
+  label: string;
+  title: string;
+  highlights: string[];
+  aside: string;
+  link: string;
+};
+
+type ProjectItem = {
+  title: string;
+  desc: string;
+  imageAlt: string;
+  GithubText: string;
+  demoText: string;
+};
+
+type Projects = {
+  label: string;
+  heading: string;
+  subheading: string;
+  githubAria: (title: string) => string;
+  demoAria: (title: string) => string;
+  items: ProjectItem[];
+};
+
+type TechGardenGroup = {
+  title: string;
+  items: string[];
+};
+
+type TechGarden = {
+  label: string;
+  heading: string;
+  intro: string;
+  groups: TechGardenGroup[];
+};
+
+type ServiceCard = {
+  title: string;
+  text: string;
+};
+
+type Services = {
+  label: string;
+  title: string;
+  contactText: string;
+  cards: ServiceCard[];
+};
+
+type Contact = {
+  label: string;
+  formTitle: string;
+  heading: string;
+  text1: string;
+  text2: string;
+  nameLabel: string;
+  emailLabel: string;
+  messageLabel: string;
+  namePlaceholder: string;
+  emailPlaceholder: string;
+  messagePlaceholder: string;
+  buttonLabel: string;
+  formAriaLabel: string;
+};
+
+type Footer = {
+  contactHeading: string;
+  email: string;
+  copyright: (year: number) => string;
+  emailAria: string;
+  socialAria: string;
+  githubAria: string;
+  linkedinAria: string;
+};
+
+type NotFound = {
+  label: string;
+  heading: string;
+  text: string;
+  button: string;
+};
+
+type Translations = {
+  meta: { titles: MetaTitles };
+  menu: Menu;
+  hero: Hero;
+  about: About;
+  projects: Projects;
+  techgarden: TechGarden;
+  services: Services;
+  contact: Contact;
+  footer: Footer;
+  notFound: NotFound;
+};
+
+export const translations: Record<"en" | "sv", Translations> = {
   en: {
     meta: {
       titles: {
