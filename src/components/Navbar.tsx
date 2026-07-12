@@ -2,7 +2,8 @@ import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X, Languages } from "lucide-react";
 import { LanguageContext } from "../contexts/LanguageContext";
-import translations from "../translations/translations";
+import { translations } from "../translations/translations";
+import { Button, ButtonLink } from "./Button";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -11,6 +12,7 @@ export default function Navbar() {
   const context = useContext(LanguageContext);
   if (!context) throw new Error("LanguageContext not found");
   const { language, toggleLanguage } = context;
+  const ui = translations[language];
 
   const menuItems = [
     { name: translations[language].menu.about, href: "/about" },
@@ -19,81 +21,95 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className='inset-x-0 top-0 z-50'>
-      <div
-        className='mx-auto flex items-center justify-between px-6 h-16
-      bg-brand-bg text-accent-light'
-      >
-        <Link to='/'>
-          <h1 className='text-2xl font-bold'>Alexia Hellsten</h1>
+    <nav className='top-0 z-50 px-4 pt-4' aria-label={ui.menu.navAriaLabel}>
+      <div className='mx-auto flex h-16 max-w-6xl items-center justify-between rounded-full border border-brand-border bg-brand-bg px-4 text-brand-fg sm:px-6'>
+        <Link
+          to='/'
+          className='min-w-0 max-w-[58%] truncate text-base font-bold tracking-wide text-brand-fg sm:max-w-none sm:text-lg md:text-xl'
+          aria-label='Alexia Hellsten - Home'
+        >
+          Alexia Hellsten
         </Link>
 
-        <ul className='hidden md:flex gap-6 list-none items-center absolute left-1/2 transform -translate-x-1/2'>
+        <ul
+          className='absolute left-1/2 hidden -translate-x-1/2 items-center gap-3 md:flex'
+          role='list'
+        >
           {menuItems.map((item) => (
             <li key={item.name}>
-              <a
-                href={item.href}
-                className='px-3 py-2 rounded-full text-md font-medium transition text-accent-light hover:bg-white hover:text-black'
-              >
+              <ButtonLink to={item.href} variant='nav' className='px-4 py-2'>
                 {item.name}
-              </a>
+              </ButtonLink>
             </li>
           ))}
         </ul>
 
         <div className='hidden md:block'>
-          <button
-            onClick={toggleLanguage}
-            className='flex items-center gap-2 px-3 py-2 rounded-full text-md font-medium transition text-accent-light hover:bg-white hover:text-black'
-          >
-            <Languages className='h-5 w-5' />
-            {language === "en" ? "Svenska" : "English"}
-          </button>
+          <div className='flex items-center gap-2'>
+            <Button
+              onClick={toggleLanguage}
+              variant='nav'
+              className='gap-2 px-4 py-2'
+              aria-label={ui.menu.switchLanguage}
+            >
+              <Languages className='h-5 w-5' aria-hidden='true' />
+              {language === "en" ? "Svenska" : "English"}
+            </Button>
+          </div>
         </div>
 
-        <div className='flex items-center gap-2 md:hidden'>
-          <button
+        <div className='relative z-10 flex shrink-0 items-center gap-2 md:hidden'>
+          <Button
             type='button'
-            className='inline-flex items-center justify-center h-10 w-10 rounded-full transition text-accent-light hover:bg-white hover:text-black'
+            variant='icon'
             aria-controls='mobile-menu'
             aria-expanded={menuOpen}
-            aria-label='Toggle menu'
+            aria-label={ui.menu.toggleMenu}
             onClick={() => setMenuOpen((v) => !v)}
           >
             {menuOpen ? (
-              <X className='h-6 w-6' />
+              <X className='h-6 w-6' aria-hidden='true' />
             ) : (
-              <Menu className='h-6 w-6' />
+              <Menu className='h-6 w-6' aria-hidden='true' />
             )}
-          </button>
+          </Button>
         </div>
       </div>
 
       {menuOpen && (
-        <div id='mobile-menu' className='bg-brand-bg md:hidden'>
-          <ul className='list-none px-6 py-3 space-y-1'>
+        <div
+          id='mobile-menu'
+          className='mx-auto mt-3 max-w-6xl rounded-3xl border border-brand-border bg-brand-bg p-3 text-brand-fg md:hidden'
+          role='dialog'
+          aria-label={ui.menu.navAriaLabel}
+        >
+          <ul className='list-none space-y-2' role='list'>
             {menuItems.map((item) => (
               <li key={item.name}>
-                <a
-                  href={item.href}
+                <ButtonLink
+                  to={item.href}
                   onClick={closeMenu}
-                  className='block px-3 py-2 rounded-md text-base font-medium transition text-accent-light hover:bg-white hover:text-black'
+                  variant='nav'
+                  className='w-full justify-start px-4 py-3 text-left'
                 >
                   {item.name}
-                </a>
+                </ButtonLink>
               </li>
             ))}
             <li>
-              <button
+              <ButtonLink
+                to='#'
                 onClick={() => {
                   toggleLanguage();
                   closeMenu();
                 }}
-                className='flex items-center gap-2 w-full px-3 py-2 rounded-md text-base font-medium transition text-accent-light hover:bg-white hover:text-black'
+                variant='nav'
+                className='w-full justify-start gap-2 px-4 py-3 text-left'
+                aria-label={ui.menu.switchLanguage}
               >
-                <Languages className='h-5 w-5' />
+                <Languages className='h-5 w-5' aria-hidden='true' />
                 {language === "en" ? "Svenska" : "English"}
-              </button>
+              </ButtonLink>
             </li>
           </ul>
         </div>
